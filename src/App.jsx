@@ -1,4 +1,5 @@
-import React, { useState, useEffect } from "react";
+import { libroFetch } from "./libroFetch";
+import React, { useState, useEffect, use } from "react";
 import "./App.css";
 import Header from "./components/Header";
 import BookList from "./components/BookList";
@@ -8,7 +9,24 @@ import AdminPanel from "./components/AdminPanel";
 import FavoritesPanel from "./components/FavoritesPanel";
 import PurchaseHistoryPanel from "./components/PurchaseHistoryPanel";
 
+
 function App() {
+  // const { data, loading, error } = libroFetch("http://localhost:8080/api/libros");
+
+  // return (
+  // <div className="App">
+  //   <h1>Librería</h1>
+  //   <div className="card">
+  //     <ul>
+  //       {error && <li>Error al cargar los libros: {error}</li>}
+  //       {loading && <p>Cargando libros...</p>}
+  //       {data?.map((libro) => (
+  //         <h1 key={libro.id}>{libro.title}-{libro.author}</h1>
+  //         ))}
+  //     </ul>
+  //   </div>
+  // </div>
+  // );
   // Estado para los libros
   const [books, setBooks] = useState([
     {
@@ -113,33 +131,33 @@ function App() {
     },
   ]);
 
-  // Estado para el carrito de compras
+  //Estado para el carrito de compras
   const [cart, setCart] = useState([]);
 
-  // Estado para favoritos
+  //Estado para favoritos
   const [favorites, setFavorites] = useState(
     books.filter((book) => book.isFavorite)
   );
 
-  // Estado para historial de compras
+  //Estado para historial de compras
   const [purchaseHistory, setPurchaseHistory] = useState(() => {
     // Recuperar historial de localStorage si existe
     const savedHistory = localStorage.getItem("bookStorePurchaseHistory");
     return savedHistory ? JSON.parse(savedHistory) : [];
   });
 
-  // Estado para el filtro de género
+  //Estado para el filtro de género
   const [selectedGenre, setSelectedGenre] = useState("Todos");
 
-  // Estado para la búsqueda por nombre
+  //Estado para la búsqueda por nombre
   const [searchTerm, setSearchTerm] = useState("");
 
-  // Estado para mostrar/ocultar paneles
+  //Estado para mostrar/ocultar paneles
   const [showAdmin, setShowAdmin] = useState(false);
   const [showFavorites, setShowFavorites] = useState(false);
   const [showPurchaseHistory, setShowPurchaseHistory] = useState(false);
 
-  // Guardar historial en localStorage cuando cambie
+  //Guardar historial en localStorage cuando cambie
   useEffect(() => {
     localStorage.setItem(
       "bookStorePurchaseHistory",
@@ -147,10 +165,10 @@ function App() {
     );
   }, [purchaseHistory]);
 
-  // Extraer géneros únicos para el filtro
+  //Extraer géneros únicos para el filtro
   const genres = ["Todos", ...new Set(books.map((book) => book.genre))];
 
-  // Filtrar libros por género y búsqueda
+  //Filtrar libros por género y búsqueda
   const filteredBooks = books.filter((book) => {
     const matchesGenre =
       selectedGenre === "Todos" || book.genre === selectedGenre;
