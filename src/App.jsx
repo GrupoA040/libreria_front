@@ -11,22 +11,22 @@ import PurchaseHistoryPanel from "./components/PurchaseHistoryPanel";
 
 
 function App() {
-  // const { data, loading, error } = libroFetch("http://localhost:8080/api/libros");
+  const { data, loading, error } = libroFetch("hhttps://la-libreria.onrender.com/api/libros");
 
-  // return (
-  // <div className="App">
-  //   <h1>Librería</h1>
-  //   <div className="card">
-  //     <ul>
-  //       {error && <li>Error al cargar los libros: {error}</li>}
-  //       {loading && <p>Cargando libros...</p>}
-  //       {data?.map((libro) => (
-  //         <h1 key={libro.id}>{libro.title}-{libro.author}</h1>
-  //         ))}
-  //     </ul>
-  //   </div>
-  // </div>
-  // );
+  return (
+  <div className="App">
+    <h1>Librería</h1>
+    <div className="card">
+      <ul>
+        {error && <li>Error al cargar los libros: {error}</li>}
+        {loading && <p>Cargando libros...</p>}
+        {data?.map((libro) => (
+          <h1 key={libro.id}>{libro.title}-{libro.author}</h1>
+          ))}
+      </ul>
+    </div>
+  </div>
+  );
   // Estado para los libros
   const [books, setBooks] = useState([
     {
