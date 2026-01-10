@@ -11,34 +11,34 @@ import PurchaseHistoryPanel from "./components/PurchaseHistoryPanel";
 
 
 function App() {
-  const { data, loading, error } = libroFetch("hhttps://la-libreria.onrender.com/api/libros");
+  // const { data, loading, error } = libroFetch("hhttps://la-libreria.onrender.com/api/libros");
 
-  return (
-  <div className="App">
-    <h1>Librería</h1>
-    <div className="card">
-      <ul>
-        {error && <li>Error al cargar los libros: {error}</li>}
-        {loading && <p>Cargando libros...</p>}
-        {data?.map((libro) => (
-          <h1 key={libro.id}>{libro.title}-{libro.author}</h1>
-          ))}
-      </ul>
-    </div>
-  </div>
-  );
+  // return (
+  // <div className="App">
+  //   <h1>Librería</h1>
+  //   <div className="card">
+  //     <ul>
+  //       {error && <li>Error al cargar los libros: {error}</li>}
+  //       {loading && <p>Cargando libros...</p>}
+  //       {data?.map((libro) => (
+  //         <h1 key={libro.id}>{libro.title}-{libro.author}</h1>
+  //         ))}
+  //     </ul>
+  //   </div>
+  // </div>
+  // );
   // Estado para los libros
   const [books, setBooks] = useState([
-    {
-      id: 1,
-      title: "Cien años de soledad",
-      author: "Gabriel García Márquez",
-      price: 557.0,
-      genre: "Realismo mágico",
-      stock: 10,
-      isFavorite: false,
-      img: "https://pdlibrosmex.cdnstatics2.com/usuaris/libros/thumbs/bd9eb6da-9b39-4eb6-8657-2b9fdc6d5fc2/d_360_620/portada_cien-anos-de-soledad-50aniv_gabriel-garcia-marquez_201705191948.webp",
-    },
+    // {
+    //   id: 1,
+    //   title: "Cien años de soledad",
+    //   author: "Gabriel García Márquez",
+    //   price: 557.0,
+    //   genre: "Realismo mágico",
+    //   stock: 10,
+    //   isFavorite: false,
+    //   img: "https://pdlibrosmex.cdnstatics2.com/usuaris/libros/thumbs/bd9eb6da-9b39-4eb6-8657-2b9fdc6d5fc2/d_360_620/portada_cien-anos-de-soledad-50aniv_gabriel-garcia-marquez_201705191948.webp",
+    // },
     {
       id: 2,
       title: "Don Quijote de la Mancha",
