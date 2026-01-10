@@ -7,7 +7,12 @@ export function libroFetch(url) {
 
   useEffect(() => {
     setLoading(true);
-    fetch(url)
+    fetch(url, {
+      "headers": {
+        "Content-Type": "application/json"
+      },
+      method: 'GET',
+    })
       .then((response) => response.json())
       .then((books) => setBooks(books))
       .catch((error) => setError(error))

@@ -13,7 +13,7 @@ function Header({
 }) {
   return (
     <header>
-      <div className="logo">📚 Librería José Cedillo</div>
+      <div className="logo">📚 La Librería</div>
       <nav>
         <div className="nav-icons">
           <div

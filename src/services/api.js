@@ -1,8 +1,8 @@
 import axios from 'axios';
 
 const api = axios.create({
-  baseURL: 'https://la-libreria.onrender.com/api', // URL de tu API
-  timeout: 10000,
+  baseURL: 'https://la-libreria.onrender.com/api/', // URL de tu API
+  //timeout: 10000,
 });
 
 // Servicio para libros
