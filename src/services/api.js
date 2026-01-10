@@ -1,7 +1,7 @@
-import axios from 'axios';
+import axios from "axios";
 
 const api = axios.create({
-  baseURL: 'https://la-libreria.onrender.com/api/', // URL de tu API
+  baseURL: "https://la-libreria.onrender.com/api", // URL de tu API
   //timeout: 10000,
 });
 
@@ -10,10 +10,10 @@ export const bookService = {
   // Obtener todos los libros
   getBooks: async () => {
     try {
-      const response = await api.get('/libros');
+      const response = await api.get("/libros");
       return response.data;
     } catch (error) {
-      console.error('Error fetching books:', error);
+      console.error("Error fetching books:", error);
       throw error;
     }
   },
@@ -32,10 +32,10 @@ export const bookService = {
   // Crear un nuevo libro
   createBook: async (bookData) => {
     try {
-      const response = await api.post('/libros', bookData);
+      const response = await api.post("/libros", bookData);
       return response.data;
     } catch (error) {
-      console.error('Error creating book:', error);
+      console.error("Error creating book:", error);
       throw error;
     }
   },
@@ -60,5 +60,5 @@ export const bookService = {
       console.error(`Error deleting book ${id}:`, error);
       throw error;
     }
-  }
+  },
 };
