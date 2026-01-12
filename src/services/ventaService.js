@@ -1,5 +1,5 @@
 // src/services/ventaService.js
-const API_URL = "http://localhost:8080/api/ventas";
+const API_URL = "https://la-libreria.onrender.com/api/ventas";
 
 class VentaService {
   // Procesar una nueva venta

@@ -1,4 +1,3 @@
-// src/components/admin/AdminSalesPanel.jsx
 import React, { useState, useEffect } from "react";
 import ventaService from "../../services/ventaService";
 import "./AdminSalesPanel.css";

@@ -1,5 +1,5 @@
 // src/services/stockService.js
-const STOCK_API_URL = "http://localhost:8080/api/stock";
+const STOCK_API_URL = "https://la-libreria.onrender.com/api/stock";
 
 class StockService {
   // Verificar disponibilidad de stock

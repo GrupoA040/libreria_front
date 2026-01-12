@@ -1,8 +1,8 @@
 import axios from "axios";
 
 const api = axios.create({
-  baseURL: "http://localhost:8080/api", // URL de tu API
-  //baseURL: "https://la-libreria.onrender.com/api", // URL de tu API
+  //baseURL: "http://localhost:8080/api", // URL de tu API
+  baseURL: "https://la-libreria.onrender.com/api", // URL de tu API
   timeout: 10000,
 });
 

@@ -1,4 +1,4 @@
-const API_URL = "http://localhost:8080/api/libros";
+const API_URL = "https://la-libreria.onrender.com/api/libros";
 
 class BookService {
   // Obtener todos los libros
